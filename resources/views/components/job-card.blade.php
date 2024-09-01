@@ -1,27 +1,26 @@
+@props(['job'])
+
 <x-panel class="flex-col text-center">
     <div class="self-start text-sm">
-        Laracasts
+        {{ $job->employer->name }}
     </div>
     <div class="py-8">
         <h3 class="text-xl font-bold transition-colors duration-200 group-hover:text-blue-800">
-            Video Producer
+            {{ $job->title }}
         </h3>
         <p class="mt-4 text-sm">
-            Full Time - From $60,000
+            {{ $job->schedule . __('- From ') . $job->salary . __(' per Year') }}
         </p>
     </div>
     <div class="flex items-center justify-between mt-auto">
         <div>
-            <x-tag size="small">
-                Tag
-            </x-tag>
-            <x-tag size="small">
-                Tag
-            </x-tag>
-            <x-tag size="small">
-                Tag
-            </x-tag>
+            @foreach ($job->tags as $tag)
+                <x-tag
+                    size="small"
+                    :tag="$tag"
+                />
+            @endforeach
         </div>
-        <x-employer-logo width="42"/>
+        <x-employer-logo width="42" :imageUrl={{ $job->employer->logo }}/>
     </div>
 </x-panel>
