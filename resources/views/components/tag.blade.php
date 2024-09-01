@@ -1,4 +1,4 @@
-@props(['size' => 'base'])
+@props(['tag', 'size' => 'base'])
 
 @php
     $classes = "py-1 font-bold transition-colors duration-300 bg-white/10 rounded-xl hover:bg-white/25 mx-1";
@@ -16,5 +16,5 @@
     href="#"
     class="{{ $classes }}"
 >
-    {{ $slot }}
+    {{ $tag->name }}
 </a>
