@@ -1,7 +1,7 @@
 @props(['size' => 'base'])
 
 @php
-    $classes = "py-1 font-bold transition-colors duration-300 bg-white/10 rounded-xl hover:bg-white/25";
+    $classes = "py-1 font-bold transition-colors duration-300 bg-white/10 rounded-xl hover:bg-white/25 mx-1";
 
     if ($size === 'base') {
         $classes .= " px-5 text-sm";
@@ -12,4 +12,9 @@
     }
 
 @endphp
-<a href="#" class="{{ $classes }}">{{ $slot }}</a>
+<a
+    href="#"
+    class="{{ $classes }}"
+>
+    {{ $slot }}
+</a>
