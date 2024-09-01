@@ -11,6 +11,16 @@ class Employer extends Model
 {
     use HasFactory;
 
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array<int, string>
+     */
+    protected $fillable = [
+        'name',
+        'logo',
+    ];
+
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
