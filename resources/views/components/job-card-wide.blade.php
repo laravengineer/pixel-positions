@@ -1,6 +1,6 @@
 <div class="flex gap-6 p-4 bg-white/5 rounded-xl">
     <div>
-        <img src="http://picsum.photos/seed/{{ rand(0, 100000) }}/100/100" alt="" class="rounded-xl">
+        <x-employer-logo/>
     </div>
     <div class="flex flex-col flex-1">
         <a href="#" class="self-start text-sm text-gray-400">Laracasts</a>
