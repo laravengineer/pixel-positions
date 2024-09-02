@@ -11,8 +11,8 @@
 @endphp
 
 <x-forms.field
-    :label="label"
-    :name="name"
+    :label="$label"
+    :name="$name"
 >
     <input {{ $attributes($defaults) }}>
 </x-forms.field>
