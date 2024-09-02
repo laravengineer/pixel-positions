@@ -10,8 +10,8 @@
 @endphp
 
 <x-forms.field
-    :label="label"
-    :name="name"
+    :label="$label"
+    :name="$name"
 >
     <div class="w-full px-5 py-4 border rounded-xl bg-white/10 border-white/10">
         <input {{ $attributes($defaults) }}>

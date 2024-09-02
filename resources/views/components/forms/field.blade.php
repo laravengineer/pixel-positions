@@ -3,8 +3,8 @@
 <div>
     @if ($label)
         <x-forms.label
-            :name="name"
-            :label="label"
+            :name="$name"
+            :label="$label"
         />
     @endif
 
