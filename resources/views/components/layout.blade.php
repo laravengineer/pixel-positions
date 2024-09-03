@@ -11,7 +11,7 @@
         href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&display=swap"
         rel="stylesheet"
     >
-    @vite(['resources/js/app.js'])
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body class="pb-20 text-white bg-black font-hanken-grotesk">
     <div class="px-10">
@@ -38,11 +38,26 @@
                     {{ __('Companies') }}
                 </a>
             </div>
-            <div>
-                <a href="">
-                    {{ __('Post a Job') }}
-                </a>
-            </div>
+            
+            @auth
+                <div>
+                    <a href="">
+                        {{ __('Post a Job') }}
+                    </a>
+                </div>
+            @endauth
+
+            @guest
+                <div class="space-x-6 font-bold">
+                    <a href="{{ route('user-form') }}">
+                        {{ __('Sign Up') }}
+                    </a>
+                    <a href="{{ route('login-form') }}">
+                        {{ __('Log In') }}
+                    </a>
+                </div>
+            @endguest
+            
         </nav>
         <main class="mt-10 max-w-[986px] mx-auto">
             {{ $slot }}
