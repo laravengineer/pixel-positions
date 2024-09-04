@@ -4,16 +4,13 @@
             <h1 class="text-4xl font-bold">
                 {{ __("Let's Find Your Next Job") }}
             </h1>
-            <form
-                action=""
-                class="mt-6"
-            >
-                <input
-                    type="text"
-                    placeholder="{{ __("I'm looking for...") }}"
-                    class="w-full max-w-xl px-5 py-4 rounded-xl bg-white/5 border-white/10"
-                >
-            </form>
+            <x-forms.form action="{{ route('search') }}" class="mt-6">
+                <x-forms.input
+                    :label="false"
+                    name="query"
+                    placeholder="{{__('I\'m looking for...')}}"
+                />
+            </x-forms.form>
         </section>
         <section class="pt-10">
             <x-section-heading>
