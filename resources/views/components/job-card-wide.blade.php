@@ -2,7 +2,7 @@
 
 <x-panel class="gap-6">
     <div>
-        <x-employer-logo :imageUrl={{ $job->employer->logo }} />
+        <x-employer-logo :employer="$job->employer" />
     </div>
     <div class="flex flex-col flex-1">
         <a
