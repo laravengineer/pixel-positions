@@ -13,7 +13,7 @@
 
 @endphp
 <a
-    href="#"
+    href="{{ route('tag', ['tag' => $tag->name]) }}"
     class="{{ $classes }}"
 >
     {{ $tag->name }}
