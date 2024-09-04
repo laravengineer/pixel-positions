@@ -8,6 +8,8 @@ use App\Http\Controllers\TagController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [JobController::class, 'index'])->name('home');
+Route::get('/jobs', [JobController::class, 'create'])->middleware('auth')->name('job-create');
+Route::post('/jobs', [JobController::class, 'store'])->middleware('auth')->name('job-store');
 
 Route::get('/search', SearchController::class)->name('search');
 Route::get('/tags/{tag:name}', TagController::class)->name('tag');
@@ -20,4 +22,4 @@ Route::middleware('guest')->group(function () {
     Route::post('/login', [SessionController::class, 'store'])->name('login');
 });
 
-Route::delete('/logout', [SessionController::class, 'destroy'])->middleware('auth');
+Route::delete('/logout', [SessionController::class, 'destroy'])->middleware('auth')->name('logout');

@@ -40,10 +40,16 @@
             </div>
             
             @auth
-                <div>
-                    <a href="">
+                <div class="flex space-x-6 font-bold">
+                    <a href="{{ route('job-create') }}">
                         {{ __('Post a Job') }}
                     </a>
+
+                    <form method="POST" action="{{ route('logout') }}">
+                        @csrf
+                        @method('DELETE')
+                        <button>Log Out</button>
+                    </form>
                 </div>
             @endauth
 

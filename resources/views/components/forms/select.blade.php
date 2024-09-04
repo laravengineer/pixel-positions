@@ -9,8 +9,8 @@
 @endphp
 
 <x-forms.field 
-    :label="label"
-    :name="name"
+    :label="$label"
+    :name="$name"
 >
     <select {{ $attributes($defaults) }}>
         {{ $slot }}
